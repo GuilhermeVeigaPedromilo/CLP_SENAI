@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', 'Arial', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -16,6 +16,11 @@ body {
 
 /* Header */
 header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
     background: white;
     padding: 1rem;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -73,13 +78,10 @@ aside {
 }
 
 .PlayButton {
-    background: var(--primary-color);
-    color: white;
     padding: 0.8rem 2rem;
     text-decoration: none;
     border-radius: 50px;
     font-size: 1.1rem;
-    font-weight: bold;
     text-transform: uppercase;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(255, 0, 0, 0.2);
@@ -87,8 +89,24 @@ aside {
     text-align: center;
 }
 
-.PlayButton:hover {
+#BtnArduino {
+    background: var(--primary-color);
+    color: white;
+}
+
+#BtnArduino:hover {
     background: #cc0000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 0, 0, 0.3);
+}
+
+#BtnSmart {
+    background: var(--primary-color);
+    color: white;
+}
+
+#BtnSmart:hover {
+    background: #0041cc;
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(255, 0, 0, 0.3);
 }
@@ -131,7 +149,7 @@ footer {
 /* Mobile - 412x915 */
 @media screen and (max-width: 412px) {
     .LogoSENAI {
-        height: 60px;
+        height: 40px;
     }
 
     main {
@@ -160,7 +178,7 @@ footer {
 /* Orientação Paisagem para dispositivos móveis */
 @media screen and (max-height: 500px) {
     .LogoSENAI {
-        height: 60px;
+        height: 40px;
     }
 
     main {
@@ -185,7 +203,7 @@ footer {
 /* Tablet - 853x1280 */
 @media screen and (min-width: 853px) {
     .LogoSENAI {
-        height: 180px;
+        height: 60px;
     }
 
     main {
@@ -215,7 +233,7 @@ footer {
 /* Desktop - 1366x768 */
 @media screen and (min-width: 1366px) {
     .LogoSENAI {
-        height: 240px;
+        height: 80px;
     }
 
     main {
@@ -243,7 +261,7 @@ footer {
 /* Full HD - 1920x1080 */
 @media screen and (min-width: 1920px) {
     .LogoSENAI {
-        height: 240px;
+        height: 100px;
     }
 
     main {
