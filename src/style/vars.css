@@ -1,3 +1,8 @@
+/* Variáveis de cores */
 :root {
-    --font: 
+    --primary-color: #ff0000;  /* Vermelho SENAI */
+    --secondary-color: #004a8d; /* Azul SENAI */
+    --background-color: #f0f2f5;
+    --text-color: #333;
+    --hover-color: #002a5d;
 }
