@@ -1,0 +1,305 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #f0f2f5 0%, #e0e2e5 100%);
+}
+
+/* Header */
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.LogoSENAI {
+    height: 60px; /* Tamanho base para mobile */
+    transition: transform 0.3s ease;
+}
+
+.LogoSENAI:hover {
+    transform: scale(1.05);
+}
+
+/* Main content */
+main {
+    flex: 1;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+h1 {
+    color: var(--secondary-color);
+    font-size: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--primary-color);
+}
+
+/* Aside com botões */
+aside {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+}
+
+.PlayButton {
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.2);
+    width: 80%;
+    text-align: center;
+}
+
+#BtnArduino {
+    background: var(--primary-color);
+    color: white;
+}
+
+#BtnArduino:hover {
+    background: #cc0000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 0, 0, 0.3);
+}
+
+#BtnSmart {
+    background: var(--primary-color);
+    color: white;
+}
+
+#BtnSmart:hover {
+    background: #0041cc;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 0, 0, 0.3);
+}
+
+.linkSmartLadder {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+    position: relative;
+    text-align: center;
+}
+
+.linkSmartLadder::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--secondary-color);
+    transition: width 0.3s ease;
+}
+
+.linkSmartLadder:hover {
+    color: var(--hover-color);
+}
+
+.linkSmartLadder:hover::after {
+    width: 100%;
+}
+
+/* Footer */
+footer {
+    background: var(--secondary-color);
+    height: 40px;
+    margin-top: auto;
+}
+
+/* Mobile - 412x915 */
+@media screen and (max-width: 412px) {
+    .LogoSENAI {
+        height: 40px;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .PlayButton {
+        padding: 0.7rem 1.5rem;
+        font-size: 1rem;
+        width: 90%;
+    }
+
+    .linkSmartLadder {
+        font-size: 0.8rem;
+    }
+
+    aside {
+        max-width: 250px;
+    }
+}
+
+/* Orientação Paisagem para dispositivos móveis */
+@media screen and (max-height: 500px) {
+    .LogoSENAI {
+        height: 40px;
+    }
+
+    main {
+        padding: 0.8rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    aside {
+        gap: 1rem;
+    }
+
+    .PlayButton {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Tablet - 853x1280 */
+@media screen and (min-width: 853px) {
+    .LogoSENAI {
+        height: 60px;
+    }
+
+    main {
+        padding: 2rem;
+    }
+
+    h1 {
+        font-size: 2.8rem;
+    }
+
+    .PlayButton {
+        padding: 1.2rem 3rem;
+        font-size: 1.4rem;
+        width: 100%;
+    }
+
+    .linkSmartLadder {
+        font-size: 1.2rem;
+    }
+
+    aside {
+        max-width: 450px;
+        gap: 2rem;
+    }
+}
+
+/* Desktop - 1366x768 */
+@media screen and (min-width: 1366px) {
+    .LogoSENAI {
+        height: 80px;
+    }
+
+    main {
+        padding: 2.5rem;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    .PlayButton {
+        padding: 1.3rem 3.5rem;
+        font-size: 1.5rem;
+    }
+
+    .linkSmartLadder {
+        font-size: 1.3rem;
+    }
+
+    aside {
+        max-width: 500px;
+    }
+}
+
+/* Full HD - 1920x1080 */
+@media screen and (min-width: 1920px) {
+    .LogoSENAI {
+        height: 100px;
+    }
+
+    main {
+        padding: 3rem;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+        margin-bottom: 3rem;
+    }
+
+    h1::after {
+        width: 120px;
+        height: 4px;
+    }
+
+    .PlayButton {
+        padding: 1.5rem 4rem;
+        font-size: 1.8rem;
+    }
+
+    .linkSmartLadder {
+        font-size: 1.4rem;
+    }
+
+    aside {
+        max-width: 600px;
+        gap: 2.5rem;
+    }
+.noBorderAndBackground {
+        padding: 0.8rem 2rem;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.2);
+    width: 80%;
+    text-align: center;
+}
+}
