@@ -46,7 +46,7 @@ main {
 }
 
 h1 {
-    color: var(--secondary-color);
+    color: var(--secondary-color-azul-senai);
     font-size: 2rem;
     text-align: center;
     text-transform: uppercase;
@@ -64,7 +64,7 @@ h1::after {
     transform: translateX(-50%);
     width: 80px;
     height: 3px;
-    background: var(--primary-color);
+    background: var(--primary-color-red-senai);
 }
 
 /* Aside com botões */
@@ -90,7 +90,7 @@ aside {
 }
 
 #BtnArduino {
-    background: var(--primary-color);
+    background: var(--primary-color-red-senai);
     color: white;
 }
 
@@ -101,7 +101,7 @@ aside {
 }
 
 #BtnSmart {
-    background: var(--primary-color);
+    background: var(--primary-color-red-senai);
     color: white;
 }
 
@@ -112,7 +112,7 @@ aside {
 }
 
 .linkSmartLadder {
-    color: var(--secondary-color);
+    color: var(--secondary-color-azul-senai);
     text-decoration: none;
     font-size: 0.9rem;
     transition: color 0.3s ease;
@@ -127,12 +127,12 @@ aside {
     height: 2px;
     bottom: -4px;
     left: 0;
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-color-azul-senai);
     transition: width 0.3s ease;
 }
 
 .linkSmartLadder:hover {
-    color: var(--hover-color);
+    color: var(--hover-color-azul-senai);
 }
 
 .linkSmartLadder:hover::after {
@@ -141,7 +141,7 @@ aside {
 
 /* Footer */
 footer {
-    background: var(--secondary-color);
+    background: var(--secondary-color-azul-senai);
     height: 40px;
     margin-top: auto;
 }

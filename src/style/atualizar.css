@@ -1,0 +1,55 @@
+/* Estilo exclusivo da página de atualização */
+.update-page-section {
+    width: 100%;
+    max-width: 600px;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.update-page-section h2 {
+    color: var(--secondary-color-azul-senai);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--primary-color-red-senai);
+    padding-bottom: 0.5rem;
+}
+
+.update-page-section p {
+    color: #444;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.update-page-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.update-page-form input[type="file"] {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.update-page-form input[type="submit"] {
+    padding: 0.8rem 2rem;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.update-page-form input[type="submit"]:hover {
+    background: #cc0000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 0, 0, 0.3);
+}

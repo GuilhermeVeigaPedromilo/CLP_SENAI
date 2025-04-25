@@ -1,0 +1,71 @@
+/* Estilos exclusivos da página MQTT */
+.mqtt-page-form {
+    width: 100%;
+    max-width: 600px;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.mqtt-page-form h2 {
+    color: var(--secondary-color-azul-senai);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--primary-color-red-senai);
+    padding-bottom: 0.5rem;
+}
+
+.mqtt-page-form label {
+    display: block;
+    margin: 1rem 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+.mqtt-page-form input[type="text"],
+.mqtt-page-form input[type="number"] {
+    width: 100%;
+    padding: 0.6rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-top: 0.3rem;
+}
+
+/* Botões de abas */
+.mqtt-page-tab-button {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    background-color: var(--secondary-color-azul-senai);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    margin: 0.5rem 0.3rem;
+    transition: background 0.3s ease;
+}
+
+.mqtt-page-tab-button.active {
+    background-color: var(--primary-color-red-senai);
+}
+
+/* Conteúdo das abas */
+.mqtt-page-tab {
+    margin-top: 1rem;
+    display: none;
+}
+
+/* Botão de envio */
+.mqtt-page-form input[type="submit"] {
+    margin-top: 2rem;
+    padding: 0.8rem 2rem;
+    background-color: var(--primary-color-red-senai);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.mqtt-page-form input[type="submit"]:hover {
+    background-color: #cc0000;
+}

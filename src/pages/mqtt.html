@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CLP-ESP32 - Configurações MQTT</title>
+    <link rel="shortcut icon" type="imagex/jpg" href="../assets/images/logo-senai-1.png" />
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="stylesheet" href="../style/mqtt.css" />
+</head>
+
+<body>
+    <div id="header-placeholder" data-basepath="../"></div>
+
+    <main>
+        <h1>Configurações MQTT</h1>
+        <form class="mqtt-page-form" action="/setConfig" method="POST">
+            <h2>Geral</h2>
+            <label>Servidor:
+                <input type="text" name="server" />
+            </label>
+            <label>Porta:
+                <input type="number" name="port" />
+            </label>
+            <label>Client ID:
+                <input type="text" name="clientID" />
+            </label>
+
+            <h2>Entradas e Saídas</h2>
+            <div>
+                <button type="button" class="mqtt-page-tab-button" onclick="openTab('analogica')">Entradas Analógicas</button>
+                <button type="button" class="mqtt-page-tab-button" onclick="openTab('digital')">Entradas Digitais</button>
+                <button type="button" class="mqtt-page-tab-button" onclick="openTab('saidas')">Saídas Digitais</button>
+                <button type="button" class="mqtt-page-tab-button" onclick="openTab('rs485')">RS485</button>
+            </div>
+
+            <div id="analogica" class="mqtt-page-tab">
+                <h3>Entradas Analógicas</h3>
+                <label>Entrada 1: <input type="text" name="topicANAL1" /></label>
+                <label>Entrada 2: <input type="text" name="topicANAL2" /></label>
+                <label>Entrada 3: <input type="text" name="topicANAL3" /></label>
+                <label>Entrada 4: <input type="text" name="topicANAL4" /></label>
+            </div>
+
+            <div id="digital" class="mqtt-page-tab">
+                <h3>Entradas Digitais</h3>
+                <label>Digital 2: <input type="text" name="topicDIGI2" /></label>
+                <label>Digital 3: <input type="text" name="topicDIGI3" /></label>
+                <label>Digital 4: <input type="text" name="topicDIGI4" /></label>
+                <label>Digital 5: <input type="text" name="topicDIGI5" /></label>
+                <label>Digital 6: <input type="text" name="topicDIGI6" /></label>
+            </div>
+
+            <div id="saidas" class="mqtt-page-tab">
+                <h3>Saídas Digitais</h3>
+                <label>Saída 1 - Ligado: <input type="text" name="topicsaida1" />
+                       Desligado: <input type="text" name="topicsaida11" /></label>
+                <label>Saída 2 - Ligado: <input type="text" name="topicsaida2" />
+                       Desligado: <input type="text" name="topicsaida12" /></label>
+                <label>Saída 3 - Ligado: <input type="text" name="topicsaida3" />
+                       Desligado: <input type="text" name="topicsaida13" /></label>
+                <label>Saída 4 - Ligado: <input type="text" name="topicsaida4" />
+                       Desligado: <input type="text" name="topicsaida14" /></label>
+                <label>Saída 5 - Ligado: <input type="text" name="topicsaida5" />
+                       Desligado: <input type="text" name="topicsaida15" /></label>
+                <label>Saída 6 - Ligado: <input type="text" name="topicsaida6" />
+                       Desligado: <input type="text" name="topicsaida16" /></label>
+                <label>Saída 7 - Ligado: <input type="text" name="topicsaida7" />
+                       Desligado: <input type="text" name="topicsaida17" /></label>
+                <label>Saída 8 - Ligado: <input type="text" name="topicsaida8" />
+                       Desligado: <input type="text" name="topicsaida18" /></label>
+            </div>
+
+            <div id="rs485" class="mqtt-page-tab">
+                <h3>RS485</h3>
+                <label>Configuração: <input type="text" name="configRS485" /></label>
+            </div>
+
+            <input type="submit" value="Salvar Configurações" />
+        </form>
+    </main>
+
+    <footer></footer>
+
+    <script src="../js/consumir_header.js" defer></script>
+    <script>
+        function openTab(tabName) {
+            document.querySelectorAll('.mqtt-page-tab').forEach(tab => tab.style.display = 'none');
+            document.getElementById(tabName).style.display = 'block';
+            document.querySelectorAll('.mqtt-page-tab-button').forEach(button => button.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => openTab('analogica'));
+    </script>
+</body>
+</html>

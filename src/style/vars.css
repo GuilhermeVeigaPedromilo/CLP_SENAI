@@ -1,9 +1,9 @@
 /* Variáveis de cores */
 :root {
     --font-family: Verdana, Geneva, Tahoma, sans-serif;
-    --primary-color: #ff0000;  /* Vermelho SENAI */
-    --secondary-color: #004a8d; /* Azul SENAI */
+    --primary-color-red-senai: #ff0000;  /* Vermelho SENAI */
+    --secondary-color-azul-senai: #004a8d; /* Azul SENAI */
     --background-color: #f0f2f5;
     --text-color: #333;
-    --hover-color: #002a5d;
+    --hover-color-azul-senai: #002a5d;
 }
