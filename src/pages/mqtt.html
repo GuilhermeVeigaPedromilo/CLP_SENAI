@@ -1,97 +1,242 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>CLP-ESP32 - Configurações MQTT</title>
-    <link rel="shortcut icon" type="imagex/jpg" href="../assets/images/logo-senai-1.png" />
-    <link rel="stylesheet" href="../style/style.css" />
-    <link rel="stylesheet" href="../style/mqtt.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configurações MQTT</title>
+  <link rel="shortcut icon" href="../assets/images/logo-senai-1.png" type="imagex/jpg" />
+  <link rel="stylesheet" href="../style/style.css" />
+  <link rel="stylesheet" href="../style/mqtt.css" />
 </head>
-
 <body>
-    <div id="header-placeholder" data-basepath="../"></div>
+  <div id="header-placeholder" data-basepath="../"></div>
 
-    <main>
-        <h1>Configurações MQTT</h1>
-        <form class="mqtt-page-form" action="/setConfig" method="POST">
-            <h2>Geral</h2>
-            <label>Servidor:
-                <input type="text" name="server" />
-            </label>
-            <label>Porta:
-                <input type="number" name="port" />
-            </label>
-            <label>Client ID:
-                <input type="text" name="clientID" />
-            </label>
+  <nav class="mqtt-page-navbar">
+    <ul>
+      <li class="active" onclick="openMainTab('portas', this)">Portas</li>
+      <li onclick="openMainTab('inv', this)">Inversores</li>
+    </ul>
+  </nav>
 
-            <h2>Entradas e Saídas</h2>
-            <div>
-                <button type="button" class="mqtt-page-tab-button" onclick="openTab('analogica')">Entradas Analógicas</button>
-                <button type="button" class="mqtt-page-tab-button" onclick="openTab('digital')">Entradas Digitais</button>
-                <button type="button" class="mqtt-page-tab-button" onclick="openTab('saidas')">Saídas Digitais</button>
-                <button type="button" class="mqtt-page-tab-button" onclick="openTab('rs485')">RS485</button>
-            </div>
+  <main>
+    <section id="portas" class="main-tab">
+      <form class="mqtt-page-form" action="setConfig" method="POST">
+        <h2>Configurações Gerais</h2>
+        <label>Servidor: <input type="text" name="server" /></label>
+        <label>Porta: <input type="number" name="port" /></label>
+        <label>Client ID: <input type="text" name="clientID" /></label>
 
-            <div id="analogica" class="mqtt-page-tab">
-                <h3>Entradas Analógicas</h3>
-                <label>Entrada 1: <input type="text" name="topicANAL1" /></label>
-                <label>Entrada 2: <input type="text" name="topicANAL2" /></label>
-                <label>Entrada 3: <input type="text" name="topicANAL3" /></label>
-                <label>Entrada 4: <input type="text" name="topicANAL4" /></label>
-            </div>
+        <h2>Entradas e Saídas</h2>
+        <div class="mqtt-page-tabs">
+          <button type="button" class="mqtt-page-tab-button" onclick="openTab('analogica', this)">Entradas Analógicas</button>
+          <button type="button" class="mqtt-page-tab-button" onclick="openTab('digital', this)">Entradas Digitais</button>
+          <button type="button" class="mqtt-page-tab-button" onclick="openTab('saidas', this)">Saídas Digitais</button>
+        </div>
 
-            <div id="digital" class="mqtt-page-tab">
-                <h3>Entradas Digitais</h3>
-                <label>Digital 2: <input type="text" name="topicDIGI2" /></label>
-                <label>Digital 3: <input type="text" name="topicDIGI3" /></label>
-                <label>Digital 4: <input type="text" name="topicDIGI4" /></label>
-                <label>Digital 5: <input type="text" name="topicDIGI5" /></label>
-                <label>Digital 6: <input type="text" name="topicDIGI6" /></label>
-            </div>
+        <div id="analogica" class="mqtt-page-tab">
+          <h3>Entradas Analógicas</h3>
+          <label>Entrada 1: <input type="text" name="topicANAL1" /></label>
+          <label>Entrada 2: <input type="text" name="topicANAL2" /></label>
+          <label>Entrada 3: <input type="text" name="topicANAL3" /></label>
+          <label>Entrada 4: <input type="text" name="topicANAL4" /></label>
+        </div>
 
-            <div id="saidas" class="mqtt-page-tab">
-                <h3>Saídas Digitais</h3>
-                <label>Saída 1 - Ligado: <input type="text" name="topicsaida1" />
-                       Desligado: <input type="text" name="topicsaida11" /></label>
-                <label>Saída 2 - Ligado: <input type="text" name="topicsaida2" />
-                       Desligado: <input type="text" name="topicsaida12" /></label>
-                <label>Saída 3 - Ligado: <input type="text" name="topicsaida3" />
-                       Desligado: <input type="text" name="topicsaida13" /></label>
-                <label>Saída 4 - Ligado: <input type="text" name="topicsaida4" />
-                       Desligado: <input type="text" name="topicsaida14" /></label>
-                <label>Saída 5 - Ligado: <input type="text" name="topicsaida5" />
-                       Desligado: <input type="text" name="topicsaida15" /></label>
-                <label>Saída 6 - Ligado: <input type="text" name="topicsaida6" />
-                       Desligado: <input type="text" name="topicsaida16" /></label>
-                <label>Saída 7 - Ligado: <input type="text" name="topicsaida7" />
-                       Desligado: <input type="text" name="topicsaida17" /></label>
-                <label>Saída 8 - Ligado: <input type="text" name="topicsaida8" />
-                       Desligado: <input type="text" name="topicsaida18" /></label>
-            </div>
+        <div id="digital" class="mqtt-page-tab">
+          <h3>Entradas Digitais</h3>
+          <label>Entrada 2: <input type="text" name="topicDIGI2" /></label>
+          <label>Entrada 3: <input type="text" name="topicDIGI3" /></label>
+          <label>Entrada 4: <input type="text" name="topicDIGI4" /></label>
+          <label>Entrada 5: <input type="text" name="topicDIGI5" /></label>
+          <label>Entrada 6: <input type="text" name="topicDIGI6" /></label>
+        </div>
 
-            <div id="rs485" class="mqtt-page-tab">
-                <h3>RS485</h3>
-                <label>Configuração: <input type="text" name="configRS485" /></label>
-            </div>
+        <div id="saidas" class="mqtt-page-tab">
+          <h3>Saídas Digitais</h3>
+          <label>Saída 1: Ligado <input type="text" name="topicsaida1" /> Desligado <input type="text" name="topicsaida11" /></label>
+          <label>Saída 2: Ligado <input type="text" name="topicsaida2" /> Desligado <input type="text" name="topicsaida21" /></label>
+          <label>Saída 3: Ligado <input type="text" name="topicsaida3" /> Desligado <input type="text" name="topicsaida31" /></label>
+          <label>Saída 4: Ligado <input type="text" name="topicsaida4" /> Desligado <input type="text" name="topicsaida41" /></label>
+          <label>Saída 5: Ligado <input type="text" name="topicsaida5" /> Desligado <input type="text" name="topicsaida51" /></label>
+          <label>Saída 6: Ligado <input type="text" name="topicsaida6" /> Desligado <input type="text" name="topicsaida61" /></label>
+          <label>Saída 7: Ligado <input type="text" name="topicsaida7" /> Desligado <input type="text" name="topicsaida71" /></label>
+          <label>Saída 8: Ligado <input type="text" name="topicsaida8" /> Desligado <input type="text" name="topicsaida81" /></label>
+        </div>
 
-            <input type="submit" value="Salvar Configurações" />
-        </form>
-    </main>
+        <input type="submit" value="Salvar Configurações" />
+      </form>
+    </section>
 
-    <footer></footer>
+    <section id="inv" class="main-tab" style="display: none;">
+      <div class="mqtt-page-inv">
+        <button onclick="toggleExemplo()">Exemplo JSON</button>
+        <div id="jsonBox" style="display:none" class="mqtt-page-json-box">
+<pre id="jsonTexto">
+  {
+    "ref": 1,              // Não alterar
+    "id": 5,               // Identificador do inversor
+    "memoria": 100,        // Memória a ser alterada do inversor
+    "valor": 1234          // Novo valor para alteração
+  }
+</pre>
+          <button onclick="copiarJSON()">Copiar JSON</button>
+        </div>
 
-    <script src="../js/consumir_header.js" defer></script>
-    <script>
-        function openTab(tabName) {
-            document.querySelectorAll('.mqtt-page-tab').forEach(tab => tab.style.display = 'none');
-            document.getElementById(tabName).style.display = 'block';
-            document.querySelectorAll('.mqtt-page-tab-button').forEach(button => button.classList.remove('active'));
-            event.target.classList.add('active');
+        <h2>Configurar Inversores</h2>
+        <div id="inversores">
+           <!-- for (JsonObject obj : doc.as<JsonArray>()) {
+         String id = String((int)obj["idInversor"]);
+         String baud = String((int)obj["baud"]);
+         String topic = String((const char*)obj["topic"]);
+         String parity = String((const char*)obj["parity"]);
+         String stopBits = String((int)obj["stopBits"]);
+     -->
+
+       <div>
+        ID: <input type='number' name='idInversor' value='" + id + "'>
+        Baud rate: <input type='number' name='baud' value='" + baud + "'>
+      
+      // Paridade
+        Paridade: <select name='parity'>
+        <option value='None'" + (parity == "None" ? String(" selected") : "") + ">Nenhum (None)</option>
+        <option value='Even'" + (parity == "Even" ? String(" selected") : "") + ">Par (Even)</option>
+        <option value='Odd'" + (parity == "Odd" ? String(" selected") : "") + ">Ímpar (Odd)</option>
+        </select>
+      
+          // Bits de parada
+           Bits de parada: <select name='stopBits'>
+           <option value='1'" + (stopBits == "1" ? String(" selected") : "") + ">1</option>
+           <option value='2'" + (stopBits == "2" ? String(" selected") : "") + ">2</option>
+           </select>
+          
+           Topic: <input type='text' name='topic' value='" + topic + "'>  // Campo para o tópico
+           <button onclick='addInversor()'>+</button>
+           <button onclick='removeInversor(this)'>-</button>
+           </div>
+        
+           <!--
+        
+        if (doc.size() == 0) {
+           <div>
+           ID: <input type='number' name='idInversor'>
+           Baud rate: <input type='number' name='baud' value='9600'>
+          
+          // Paridade
+           Paridade: <select name='parity'>
+           <option value='None'>Nenhum (None)</option>
+           <option value='Even'>Par (Even)</option>
+           <option value='Odd'>Ímpar (Odd)</option>
+           </select>
+          
+          // Bits de parada
+           Bits de parada: <select name='stopBits'>
+           <option value='1'>1</option>
+           <option value='2'>2</option>
+           </select>
+          
+           Topic: <input type='text' name='topic'>  // Campo para o tópico
+          
+           <button onclick='addInversor()'>+</button>
+           <button onclick='removeInversor(this)'>-</button> // <-- Adicionado botão de remover
+           </div>
         }
+           -->
+        </div>
+        <br />
+        <button onclick="addInversor()">+</button>
+        <button onclick="salvar()">Salvar</button>
+      </div>
+    </section>
+  </main>
 
-        document.addEventListener('DOMContentLoaded', () => openTab('analogica'));
-    </script>
+  <footer></footer>
+  <script src="../js/consumir_header.js" defer></script>
+  <script>
+    function openMainTab(tabId, element) {
+      document.querySelectorAll('.main-tab').forEach(tab => tab.style.display = 'none');
+      document.getElementById(tabId).style.display = 'block';
+      document.querySelectorAll('.mqtt-page-navbar li').forEach(li => li.classList.remove('active'));
+      element.classList.add('active');
+    }
+
+    function openTab(tabId, element) {
+      document.querySelectorAll('.mqtt-page-tab').forEach(tab => tab.style.display = 'none');
+      document.getElementById(tabId).style.display = 'block';
+      document.querySelectorAll('.mqtt-page-tab-button').forEach(btn => btn.classList.remove('active'));
+      element.classList.add('active');
+    }
+
+    function toggleExemplo() {
+      const div = document.getElementById('jsonBox');
+      div.style.display = (div.style.display === 'none') ? 'block' : 'none';
+    }
+
+    function copiarJSON() {
+      const texto = document.getElementById('jsonTexto').innerText;
+      const temp = document.createElement('textarea');
+      temp.value = texto;
+      document.body.appendChild(temp);
+      temp.select();
+      document.execCommand('copy');
+      document.body.removeChild(temp);
+      alert('JSON copiado com sucesso!');
+    }
+
+    function addInversor() {
+      let c = document.getElementById('inversores');
+      let d = document.createElement('div');
+      d.className = "mqtt-page-inv-block";
+      d.innerHTML = `ID: <input type='number' name='idInversor'>
+        Baud rate: <input type='number' name='baud' value='9600'>
+        Paridade: <select name='parity'>
+          <option value='None'>Nenhum</option>
+          <option value='Even'>Par</option>
+          <option value='Odd'>Ímpar</option>
+        </select>
+        Bits de parada: <select name='stopBits'>
+          <option value='1'>1</option>
+          <option value='2'>2</option>
+        </select>
+        Topic: <input type='text' name='topic'>
+        <button onclick='removeInversor(this)'>-</button>`;
+      c.appendChild(d);
+    }
+
+    function removeInversor(btn) {
+      btn.parentElement.remove();
+    }
+
+    function salvar() {
+      const lista = [];
+      document.querySelectorAll('#inversores > div').forEach(d => {
+        let id = d.querySelector("input[name='idInversor']").value;
+        let baud = d.querySelector("input[name='baud']").value;
+        let parity = d.querySelector("select[name='parity']").value;
+        let stopBits = d.querySelector("select[name='stopBits']").value;
+        let topic = d.querySelector("input[name='topic']").value;
+        if (id) {
+          lista.push({
+            idInversor: parseInt(id),
+            baud: parseInt(baud),
+            parity: parity,
+            stopBits: parseInt(stopBits),
+            topic: topic
+          });
+        }
+      });
+      fetch('/salvar', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(lista)
+      }).then(r => r.ok ? alert('Salvo!') : alert('Erro'));
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelector(".mqtt-page-navbar li.active").click();
+      setTimeout(() => {
+        const analogicaBtn = document.querySelector("button[onclick*='analogica']");
+        if (analogicaBtn) analogicaBtn.click();
+      }, 100);
+    });
+  </script>
 </body>
 </html>

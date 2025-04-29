@@ -1,71 +1,116 @@
-/* Estilos exclusivos da página MQTT */
-.mqtt-page-form {
-    width: 100%;
-    max-width: 600px;
-    background-color: white;
+/* Navbar superior */
+.mqtt-page-navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    background-color: #ddd;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .mqtt-page-navbar li {
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .mqtt-page-navbar li.active {
+    background-color: #bbb;
+  }
+  
+  /* Formulário principal */
+  .mqtt-page-form {
+    max-width: 700px;
+    margin: auto;
+    background: white;
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-}
-
-.mqtt-page-form h2 {
-    color: var(--secondary-color-azul-senai);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mqtt-page-form h2 {
     margin-bottom: 1rem;
-    font-size: 1.5rem;
+    color: var(--secondary-color-azul-senai);
     border-bottom: 2px solid var(--primary-color-red-senai);
     padding-bottom: 0.5rem;
-}
-
-.mqtt-page-form label {
+  }
+  
+  .mqtt-page-form label {
     display: block;
     margin: 1rem 0;
-    font-size: 1rem;
     color: #333;
-}
-
-.mqtt-page-form input[type="text"],
-.mqtt-page-form input[type="number"] {
+  }
+  
+  .mqtt-page-form input,
+  .mqtt-page-form select {
     width: 100%;
-    padding: 0.6rem;
+    padding: 0.5rem;
     border-radius: 6px;
     border: 1px solid #ccc;
     margin-top: 0.3rem;
-}
-
-/* Botões de abas */
-.mqtt-page-tab-button {
-    cursor: pointer;
+  }
+  
+  /* Abas */
+  .mqtt-page-tabs {
+    margin: 1rem 0;
+  }
+  
+  .mqtt-page-tab-button {
+    background: var(--secondary-color-azul-senai);
+    color: white;
+    border: none;
     padding: 0.5rem 1rem;
-    background-color: var(--secondary-color-azul-senai);
-    color: white;
-    border: none;
+    margin-right: 10px;
     border-radius: 6px;
-    margin: 0.5rem 0.3rem;
-    transition: background 0.3s ease;
-}
-
-.mqtt-page-tab-button.active {
-    background-color: var(--primary-color-red-senai);
-}
-
-/* Conteúdo das abas */
-.mqtt-page-tab {
-    margin-top: 1rem;
-    display: none;
-}
-
-/* Botão de envio */
-.mqtt-page-form input[type="submit"] {
-    margin-top: 2rem;
-    padding: 0.8rem 2rem;
-    background-color: var(--primary-color-red-senai);
-    color: white;
-    border: none;
-    border-radius: 50px;
     cursor: pointer;
-    transition: background 0.3s ease;
-}
+    transition: 0.3s;
+  }
+  
+  .mqtt-page-tab-button.active,
+  .mqtt-page-tab-button:hover {
+    background: var(--primary-color-red-senai);
+  }
+  
+  .mqtt-page-tab {
+    display: none;
+    margin-top: 1rem;
+  }
+  
+  .mqtt-page-tab h3 {
+    color: var(--secondary-color-azul-senai);
+  }
+  
+  /* JSON Box */
+  .mqtt-page-json-box {
+    background: #f3f3f3;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 10px;
+    overflow-x: auto;
+  }
 
-.mqtt-page-form input[type="submit"]:hover {
-    background-color: #cc0000;
-}
+  .mqtt-page-tab-button {
+    background-color: var(--secondary-color-azul-senai);
+    color: #8d8d8d;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .mqtt-page-tab-button:hover {
+    background-color: var(--primary-color-red-senai);
+    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.2);
+    transform: translateY(-2px);
+  }
+  
+  .mqtt-page-tab-button.active {
+    background-color: var(--primary-color-red-senai);
+    color: rgb(139, 139, 139);
+    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
+  }
+  

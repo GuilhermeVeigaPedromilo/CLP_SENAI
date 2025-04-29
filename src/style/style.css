@@ -100,6 +100,17 @@ aside {
     box-shadow: 0 6px 20px rgba(255, 0, 0, 0.3);
 }
 
+#BtnMqtt {
+    background: var(--primary-color-red-senai);
+    color: white;
+}
+
+#BtnMqtt:hover {
+    background: #038075;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 0, 0, 0.3);
+}
+
 #BtnSmart {
     background: var(--primary-color-red-senai);
     color: white;

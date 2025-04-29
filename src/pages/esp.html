@@ -1,0 +1,239 @@
+mano fiz o codigo mqtt String index_html = "";
+  index_html = "  <!DOCTYPE html>";
+  index_html += "  <html lang='pt-BR'>";
+  index_html += "  <head>";
+  index_html += "  <meta charset='UTF-8'>";
+  index_html += "  <meta name='viewport' content='width=device-width, initial-scale=1.0'>";
+  index_html += "  <title>Configurações MQTT</title>";
+  index_html += "  <style>";
+  index_html += "input,select{margin:4px}";
+  index_html += "    .navbar {";
+  index_html += "      display: flex;";
+  index_html += "      list-style-type: none;";
+  index_html += "      padding: 0;";
+  index_html += "      background-color: #ddd;";
+  index_html += "    }";
+  index_html += "    .navbar li {";
+  index_html += "      padding: 10px 20px;";
+  index_html += "      cursor: pointer;";
+  index_html += "    }";
+  index_html += "    .navbar li.active {";
+  index_html += "      background-color: #bbb;";
+  index_html += "    }";
+  index_html += "    .main-tab { display: none; }";
+  index_html += "   .tab { display: none; }";
+  index_html += "   .tab { display: none; }";
+  index_html += "   .tab { display: none; }";
+  index_html += "   .tab-button { margin-right: 10px; margin-top: 10px; }";
+  index_html += "    .tab { display: none; margin-top: 10px; }";
+  index_html += "  </style>";
+  index_html += "  </head>";
+  index_html += "  <body>";
+
+  index_html += "      <ul class=\"navbar\">";
+  index_html += "          <li onclick=\"openMainTab('portas')\" class=\"active\">Portas</li>";
+  index_html += "          <li onclick=\"openMainTab('inv')\">Inversores</li>";
+  index_html += "      </ul>";
+
+  index_html += "      <div id=\"portas\" class=\"main-tab\">";
+
+  index_html += "      <form action='/setConfig' method='POST'>";
+  index_html += "       <h2>Configurações Gerais</h2>";
+  index_html += "        Servidor: <input type='text' name='server' value='" + mqttServer + "'><br>";
+  index_html += "       <br>";
+  index_html += "        Porta: <input type='number' name='port' value='" + String(mqttPort) + "'><br>";
+  index_html += "       <br>";
+  index_html += "        Client ID: <input type='text' name='clientID' value='" + clientID + "'><br>";
+  index_html += "        <h2>Configurações de Entradas e Saídas</h2>";
+  index_html += "        <button type='button' class='tab-button' onclick=\"openTab('analogica')\">Entradas Analógicas</button>";
+  index_html += "        <button type='button' class='tab-button' onclick=\"openTab('digital')\">Entradas Digitais</button>";
+  index_html += "        <button type='button' class='tab-button' onclick=\"openTab('saidas')\">Saídas Digitais</button>";
+  index_html += "        <div id='analogica' class='tab'>";
+  index_html += "          <h3>Entradas Analógicas</h3>";
+  index_html += "Tópico Entrada Analógica 1: <input type='text' name='topicANAL1' value='" + topicANAL1 + "'><br>";
+  index_html += "          Tópico Entrada Analógica 2: <input type='text' name='topicANAL2' value='" + topicANAL2 + "'><br>";
+  index_html += "          Tópico Entrada Analógica 3: <input type='text' name='topicANAL3' value='" + topicANAL3 + "'><br>";
+  index_html += "          Tópico Entrada Analógica 4: <input type='text' name='topicANAL4' value='" + topicANAL4 + "'><br>";
+  index_html += "        </div>";
+  index_html += "        <div id='digital' class='tab'>";
+  index_html += "          <h3>Entradas Digitais</h3>";
+  index_html += "          Tópico Entrada Digital 2: <input type='text' name='topicDIGI2' value='" + topicDIGI2 + "'><br>";
+  index_html += "          Tópico Entrada Digital 3: <input type='text' name='topicDIGI3' value='" + topicDIGI3 + "'><br>";
+  index_html += "          Tópico Entrada Digital 4: <input type='text' name='topicDIGI4' value='" + topicDIGI4 + "'><br>";
+  index_html += "          Tópico Entrada Digital 5: <input type='text' name='topicDIGI5' value='" + topicDIGI5 + "'><br>";
+  index_html += "          Tópico Entrada Digital 6: <input type='text' name='topicDIGI6' value='" + topicDIGI6 + "'><br>";
+  index_html += "        </div>";
+  index_html += "        <div id='saidas' class='tab'>";
+  index_html += "          <h3>Saídas Digitais</h3>";
+  index_html += "          Saída 1: Ligado <input type='text' name='topicsaida1' value='" + topicsaida1 + "'>";
+  index_html += "          Desligado <input type='text' name='topicsaida11' value='" + topicsaida11 + "'><br>";
+  index_html += "          Saída 2: Ligado <input type='text' name='topicsaida2' value='" + topicsaida2 + "'>";
+  index_html += "         Desligado <input type='text' name='topicsaida12' value='" + topicsaida12 + "'><br>";
+  index_html += "           Saída 3: Ligado <input type='text' name='topicsaida3' value='" + topicsaida3 + "'>";
+  index_html += "           Desligado <input type='text' name='topicsaida13' value='" + topicsaida13 + "'><br>";
+  index_html += "           Saída 4: Ligado <input type='text' name='topicsaida4' value='" + topicsaida4 + "'>";
+  index_html += "           Desligado <input type='text' name='topicsaida14' value='" + topicsaida14 + "'><br>";
+  index_html += "           Saída 5: Ligado <input type='text' name='topicsaida5' value='" + topicsaida5 + "'>";
+  index_html += "           Desligado <input type='text' name='topicsaida15' value='" + topicsaida15 + "'><br>";
+  index_html += "           Saída 6: Ligado <input type='text' name='topicsaida6' value='" + topicsaida6 + "'>";
+  index_html += "           Desligado <input type='text' name='topicsaida16' value='" + topicsaida16 + "'><br>";
+  index_html += "           Saída 7: Ligado <input type='text' name='topicsaida7' value='" + topicsaida7 + "'>";
+  index_html += "           Desligado <input type='text' name='topicsaida17' value='" + topicsaida17 + "'><br>";
+  index_html += "           Saída 8: Ligado <input type='text' name='topicsaida8' value='" + topicsaida8 + "'>";
+  index_html += "           Desligado <input type='text' name='topicsaida18' value='" + topicsaida18 + "'><br>";
+  index_html += "         </div>";
+
+  index_html += "       <br><input type=\"submit\" value=\"Salvar Configurações\">";
+  index_html += "       </form>";
+
+  index_html += "       </div>";
+  index_html += "       <div id=\"inv\" class=\"main-tab\">";
+
+
+
+  index_html +=       "<button onclick='toggleExemplo()'>Exemplo JSON</button>";
+  index_html +=       "<div id='jsonBox' style='display:none; background:#f3f3f3; padding:10px; border:1px solid #ccc; border-radius:5px; margin-top:10px'>";
+  index_html +=       "<pre id='jsonTexto'>{\n";
+  index_html += "  \"ref\": 1,              // Não alterar\n";
+  index_html += "  \"id\": 5,               // Identificador do inversor\n";
+  index_html += "  \"memoria\": 100,        // Memória a ser alterada do inversor\n";
+  index_html += "  \"valor\": 1234          // Novo valor para alteração\n";
+  index_html += "}</pre>";
+  index_html += "<button onclick='copiarJSON()'>Copiar JSON</button>";
+  index_html += "</div>";   // botao json
+
+
+  index_html += "<h2>Configurar Inversores</h2><div id='inversores'>";
+
+  for (JsonObject obj : doc.as<JsonArray>()) {
+    String id = String((int)obj["idInversor"]);
+    String baud = String((int)obj["baud"]);
+    String topic = String((const char*)obj["topic"]);
+    String parity = String((const char*)obj["parity"]);
+    String stopBits = String((int)obj["stopBits"]);
+
+  index_html += "<div>";
+  index_html += "ID: <input type='number' name='idInversor' value='" + id + "'>";
+  index_html += "Baud rate: <input type='number' name='baud' value='" + baud + "'>";
+
+    // Paridade
+  index_html += "Paridade: <select name='parity'>";
+  index_html += "<option value='None'" + (parity == "None" ? String(" selected") : "") + ">Nenhum (None)</option>";
+  index_html += "<option value='Even'" + (parity == "Even" ? String(" selected") : "") + ">Par (Even)</option>";
+  index_html += "<option value='Odd'" + (parity == "Odd" ? String(" selected") : "") + ">Ímpar (Odd)</option>";
+  index_html += "</select>";
+
+    // Bits de parada
+     index_html += "Bits de parada: <select name='stopBits'>";
+     index_html += "<option value='1'" + (stopBits == "1" ? String(" selected") : "") + ">1</option>";
+     index_html += "<option value='2'" + (stopBits == "2" ? String(" selected") : "") + ">2</option>";
+     index_html += "</select>";
+    
+     index_html += "Topic: <input type='text' name='topic' value='" + topic + "'>";  // Campo para o tópico
+     index_html += "<button onclick='addInversor()'>+</button>";
+     index_html += "<button onclick='removeInversor(this)'>-</button>";
+     index_html += "</div>";
+  }
+  
+  if (doc.size() == 0) {
+     index_html += "<div>";
+     index_html += "ID: <input type='number' name='idInversor'>";
+     index_html += "Baud rate: <input type='number' name='baud' value='9600'>";
+    
+    // Paridade
+     index_html += "Paridade: <select name='parity'>";
+     index_html += "<option value='None'>Nenhum (None)</option>";
+     index_html += "<option value='Even'>Par (Even)</option>";
+     index_html += "<option value='Odd'>Ímpar (Odd)</option>";
+     index_html += "</select>";
+    
+    // Bits de parada
+     index_html += "Bits de parada: <select name='stopBits'>";
+     index_html += "<option value='1'>1</option>";
+     index_html += "<option value='2'>2</option>";
+     index_html += "</select>";
+    
+     index_html += "Topic: <input type='text' name='topic'>";  // Campo para o tópico
+    
+     index_html += "<button onclick='addInversor()'>+</button>";
+     index_html += "<button onclick='removeInversor(this)'>-</button>"; // <-- Adicionado botão de remover
+     index_html += "</div>";
+  }
+  
+   index_html += "</div><br><button onclick='salvar()'>Salvar</button>";
+
+
+
+
+
+  index_html += "       </div>";
+
+
+  index_html += "<script>";
+
+  //modbus
+    index_html += "function toggleExemplo(){";
+  index_html += "  let div = document.getElementById('jsonBox');";
+  index_html += "  div.style.display = (div.style.display === 'none') ? 'block' : 'none';";
+  index_html += "}";
+  index_html += "function copiarJSON(){";
+  index_html += "  const jsonLimpo = JSON.stringify({ref:1,id:5,memoria:100,valor:1234}, null, 2);";
+  index_html += "  const temp = document.createElement('textarea');";
+  index_html += "  temp.value = jsonLimpo;";
+  index_html += "  document.body.appendChild(temp);";
+  index_html += "  temp.select();";
+  index_html += "  document.execCommand('copy');";
+  index_html += "  document.body.removeChild(temp);";
+  index_html += "  alert('JSON copiado com sucesso!');";
+  index_html += "}";//botao exemplo json
+
+
+
+  index_html += "function addInversor(){";
+  index_html += "let c = document.getElementById('inversores');";
+  index_html += "let d = document.createElement('div');";
+  index_html += "d.innerHTML = `ID: <input type='number' name='idInversor'> Baud rate: <input type='number' name='baud' value='9600'> Paridade: <select name='parity'><option value='None'>Nenhum (None)</option><option value='Even'>Par (Even)</option><option value='Odd'>Ímpar (Odd)</option></select> Bits de parada: <select name='stopBits'><option value='1'>1</option><option value='2'>2</option></select> Topic: <input type='text' name='topic'><button onclick='addInversor()'>+</button><button onclick='removeInversor(this)'>-</button>`;";
+  index_html += "c.appendChild(d);}";
+  index_html += "function removeInversor(btn){btn.parentElement.remove();}";
+  index_html += "function salvar(){";
+  index_html += "let lista=[];";
+  index_html += "document.querySelectorAll('#inversores > div').forEach(d=>{";
+  index_html += "let id=d.querySelector('input[name=\"idInversor\"]').value;";
+  index_html += "let baud=d.querySelector('input[name=\"baud\"]').value;";
+  index_html += "let parity=d.querySelector('select[name=\"parity\"]').value;";
+  index_html += "let stopBits=d.querySelector('select[name=\"stopBits\"]').value;";
+  index_html += "let topic=d.querySelector('input[name=\"topic\"]').value;";  // Coletando o valor do tópico
+  index_html += "if(id)lista.push({idInversor:parseInt(id),baud:parseInt(baud),parity:parity,stopBits:parseInt(stopBits),topic:topic});});";
+  index_html += "fetch('/salvar',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(lista)}).then(r=>{";
+  index_html += "if(r.ok)alert('Salvo!');else alert('Erro');});}";
+  //modbus
+
+
+
+  index_html += "function openMainTab(tabId, element) {";
+  index_html += "  document.querySelectorAll('.main-tab').forEach(tab => tab.style.display = 'none');";
+  index_html += "  document.getElementById(tabId).style.display = 'block';";
+  index_html += "  document.querySelectorAll('.navbar li').forEach(li => li.classList.remove('active'));";
+  index_html += "  element.classList.add('active');";
+  index_html += "}";
+
+  index_html += "function openTab(tabId, element) {";
+  index_html += "  document.querySelectorAll('.tab').forEach(tab => tab.style.display = 'none');";
+  index_html += "  document.getElementById(tabId).style.display = 'block';";
+  index_html += "  document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));";
+  index_html += "  element.classList.add('active');";
+  index_html += "}";
+
+  index_html += "document.addEventListener('DOMContentLoaded', () => {";
+  index_html += "  document.querySelector(\".navbar li.active\").click();";
+  index_html += "  setTimeout(() => {";
+  index_html += "    const analogicaBtn = document.querySelector(\"button[onclick*='analogica']\");";
+  index_html += "    if (analogicaBtn) analogicaBtn.click();";
+  index_html += "  }, 100);";
+  index_html += "});";
+
+  index_html += "</script>";
+  index_html += "   </body>";
+  index_html += "   </html>";
+  return index_html;
+}
