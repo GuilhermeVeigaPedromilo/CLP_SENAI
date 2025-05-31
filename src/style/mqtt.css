@@ -9,7 +9,7 @@
   }
   
   .mqtt-page-navbar li {
-    padding: 10px 20px;
+    padding: 10px 80px;
     cursor: pointer;
     transition: background 0.3s;
   }
@@ -114,3 +114,149 @@
     box-shadow: 0 4px 12px rgb(71, 71, 71);
   }
   
+  /* --- Seção Inversores (melhorada) --- */
+.mqtt-page-inv {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.mqtt-page-inv h2 {
+  text-align: center;
+  color: var(--secondary-color-azul-senai);
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--primary-color-red-senai);
+  padding-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+/* Cada bloco de inversor */
+.mqtt-page-inv-block {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  background: #f8f8f8;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.5rem;
+  border-left: 5px solid var(--primary-color-red-senai);
+  border-radius: 10px;
+  position: relative;
+}
+
+/* Inputs e selects */
+.mqtt-page-inv-block input,
+.mqtt-page-inv-block select {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  font-size: 0.95rem;
+}
+
+/* Botão remover */
+.mqtt-page-inv-block button {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  height: 100%;
+  transition: background 0.3s;
+}
+
+.mqtt-page-inv-block button:hover {
+  background: #c0392b;
+}
+
+/* Botões principais */
+.mqtt-page-inv > button {
+  margin-top: 10px;
+  margin-right: 10px;
+  background-color: var(--secondary-color-azul-senai);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.mqtt-page-inv > button:hover {
+  background-color: var(--primary-color-red-senai);
+}
+
+/* --- JSON sempre visível e estilizado --- */
+.mqtt-page-json-box {
+  background: #1e1e1e;
+  color: #f8f8f2;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.95rem;
+  overflow-x: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.mqtt-page-json-box button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--primary-color-red-senai);
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.mqtt-page-json-box button:hover {
+  background: #b72d2d;
+}
+
+.mqtt-page-inv-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Estilo dos botões da seção de inversores */
+.mqtt-page-inv-actions button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--secondary-color-azul-senai);
+  color: black;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.mqtt-page-inv-actions button:hover {
+  background-color: var(--primary-color-red-senai);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.mqtt-page-inv-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}

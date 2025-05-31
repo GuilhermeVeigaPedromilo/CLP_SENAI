@@ -65,87 +65,33 @@
         <input type="submit" value="Salvar Configurações" />
       </form>
     </section>
-
     <section id="inv" class="main-tab" style="display: none;">
-      <div class="mqtt-page-inv">
-        <button onclick="toggleExemplo()">Exemplo JSON</button>
-        <div id="jsonBox" style="display:none" class="mqtt-page-json-box">
+  <div class="mqtt-page-inv">
+
+    <div id="jsonBox" class="mqtt-page-json-box">
 <pre id="jsonTexto">
-  {
-    "ref": 1,              // Não alterar
-    "id": 5,               // Identificador do inversor
-    "memoria": 100,        // Memória a ser alterada do inversor
-    "valor": 1234          // Novo valor para alteração
-  }
+{
+  "ref": 1,              // Não alterar
+  "id": 5,               // Identificador do inversor
+  "memoria": 100,        // Memória a ser alterada do inversor
+  "valor": 1234          // Novo valor para alteração
+}
 </pre>
-          <button onclick="copiarJSON()">Copiar JSON</button>
-        </div>
+      <button onclick="copiarJSON()">Copiar JSON</button>
+    </div>
 
-        <h2>Configurar Inversores</h2>
-        <div id="inversores">
-           <!-- for (JsonObject obj : doc.as<JsonArray>()) {
-         String id = String((int)obj["idInversor"]);
-         String baud = String((int)obj["baud"]);
-         String topic = String((const char*)obj["topic"]);
-         String parity = String((const char*)obj["parity"]);
-         String stopBits = String((int)obj["stopBits"]);
-     -->
+    <h2>Configurar Inversores</h2>
+    <div id="inversores"></div>
 
-       <div>
-        ID: <input type='number' name='idInversor' value='" + id + "'>
-        Baud rate: <input type='number' name='baud' value='" + baud + "'>
-      
-      // Paridade
-        Paridade: <select name='parity'>
-        <option value='None'" + (parity == "None" ? String(" selected") : "") + ">Nenhum (None)</option>
-        <option value='Even'" + (parity == "Even" ? String(" selected") : "") + ">Par (Even)</option>
-        <option value='Odd'" + (parity == "Odd" ? String(" selected") : "") + ">Ímpar (Odd)</option>
-        </select>
-      
-          // Bits de parada
-           Bits de parada: <select name='stopBits'>
-           <option value='1'" + (stopBits == "1" ? String(" selected") : "") + ">1</option>
-           <option value='2'" + (stopBits == "2" ? String(" selected") : "") + ">2</option>
-           </select>
-          
-           Topic: <input type='text' name='topic' value='" + topic + "'>  // Campo para o tópico
-           <button onclick='addInversor()'>+</button>
-           <button onclick='removeInversor(this)'>-</button>
-           </div>
-        
-           <!--
-        
-        if (doc.size() == 0) {
-           <div>
-           ID: <input type='number' name='idInversor'>
-           Baud rate: <input type='number' name='baud' value='9600'>
-          
-          // Paridade
-           Paridade: <select name='parity'>
-           <option value='None'>Nenhum (None)</option>
-           <option value='Even'>Par (Even)</option>
-           <option value='Odd'>Ímpar (Odd)</option>
-           </select>
-          
-          // Bits de parada
-           Bits de parada: <select name='stopBits'>
-           <option value='1'>1</option>
-           <option value='2'>2</option>
-           </select>
-          
-           Topic: <input type='text' name='topic'>  // Campo para o tópico
-          
-           <button onclick='addInversor()'>+</button>
-           <button onclick='removeInversor(this)'>-</button> // <-- Adicionado botão de remover
-           </div>
-        }
-           -->
-        </div>
-        <br />
-        <button onclick="addInversor()">+</button>
-        <button onclick="salvar()">Salvar</button>
-      </div>
-    </section>
+<div class="mqtt-page-inv-actions">
+  <button onclick="addInversor()">➕ Adicionar</button>
+  <button onclick="salvar()">💾 Salvar</button>
+</div>
+
+
+  </div>
+</section>
+
   </main>
 
   <footer></footer>
@@ -230,13 +176,19 @@
       }).then(r => r.ok ? alert('Salvo!') : alert('Erro'));
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelector(".mqtt-page-navbar li.active").click();
-      setTimeout(() => {
-        const analogicaBtn = document.querySelector("button[onclick*='analogica']");
-        if (analogicaBtn) analogicaBtn.click();
-      }, 100);
-    });
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelector(".mqtt-page-navbar li.active").click();
+  setTimeout(() => {
+    const analogicaBtn = document.querySelector("button[onclick*='analogica']");
+    if (analogicaBtn) analogicaBtn.click();
+
+    // Seção de inversores: adiciona pelo menos um se estiver vazia
+    const invSection = document.getElementById("inversores");
+    if (invSection && invSection.children.length === 0) {
+      addInversor();
+    }
+  }, 100);
+});
   </script>
 </body>
 </html>
