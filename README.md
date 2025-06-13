@@ -1,32 +1,75 @@
-# 🚀 CLP-SENAI
-
-Este projeto tem como objetivo desenvolver um **CLP (Controlador Lógico Programável) de baixo custo** utilizando o **ESP32**, permitindo automações **residenciais e industriais**. A interface homem-máquina (**IHM**) é baseada em uma aplicação **Web**, tornando a configuração e o monitoramento do sistema simples e acessível.
-
-## 🛠️ Tecnologias Utilizadas
-
-- **ESP32** – Microcontrolador com Wi-Fi e Bluetooth integrados
-- **C/C++** – Programação do firmware (Arduino/ESP-IDF)
-- **HTML, CSS, JavaScript** – Interface Web para controle e monitoramento
-- **WebSockets/HTTP** – Comunicação entre a IHM e o ESP32
-
-## 📌 Funcionalidades
-
-✅ Controle remoto via IHM Web  
-✅ Automação de dispositivos e processos industriais  
-✅ Comunicação via Wi-Fi  
-✅ Integração com sensores e atuadores  
-✅ Atualizações OTA (Over-The-Air)  
-✅ Suporte a múltiplas entradas e saídas  
-
-## 🎛️ Como Funciona?
-
-1. O **ESP32** atua como um servidor Web, disponibilizando uma interface para controle.  
-2. Sensores e atuadores são conectados às GPIOs do ESP32.  
-3. A comunicação entre a IHM e o ESP32 pode ser feita via **HTTP ou WebSockets**.  
-4. O usuário pode acessar a interface de qualquer dispositivo conectado à mesma rede. 
-
-## 📜 Licença
-
-Este projeto é distribuído sob a licença **MIT**.  
+# 🚀 CLP-SENAI – CLP de Baixo Custo
+<img src="./public/media/Circuito com Potênciometro - CLP Monitorando dados.jpeg">
 
 ---
+Projeto desenvolvido como trabalho final do Curso Técnico em Eletroeletrônica da Escola SENAI “Prof. João Baptista Salles da Silva” – Americana/SP.
+
+## 📘 Resumo
+
+Este projeto propõe o desenvolvimento de um **Controlador Lógico Programável (CLP)** de baixo custo baseado no microcontrolador **ESP32**, com foco educacional para o ensino técnico em automação industrial. O sistema implementa funcionalidades práticas como interface web responsiva, suporte a protocolos industriais (Modbus RTU e MQTT) e atualização remota de firmware (OTA), possibilitando uma experiência realista e interativa.
+
+## 🎯 Objetivo
+
+Oferecer uma solução acessível, modular e escalável que simule as funções essenciais de um CLP industrial, viabilizando o aprendizado prático da automação industrial em instituições educacionais com orçamento limitado.
+
+### Objetivos Específicos
+
+- Configurar o ESP32 para operar como um CLP com ciclo de scan.
+- Desenvolver uma interface web responsiva.
+- Implementar comunicação via **MQTT** e suporte ao protocolo **Modbus RTU**.
+- Criar uma **placa de circuito impresso (PCI)** modular.
+- Incluir funcionalidade de atualização OTA do firmware.
+- Validar o desempenho com testes práticos.
+
+## 🛠️ Tecnologias e Componentes
+
+- **ESP32 DevKit V1**
+- **MQTT (Mosquitto)**
+- **Modbus RTU**
+- **Arduino IDE + Bibliotecas:**
+  - WiFiManager
+  - ESPAsyncWebServer
+  - PubSubClient
+  - ModbusMaster
+  - ArduinoOTA
+- **Interface Web:** HTML, CSS, JavaScript
+- **Componentes eletrônicos:** relés, optoacopladores, reguladores de tensão, etc.
+
+## 🚀 Funcionalidades do Sistema
+
+- Interface gráfica para controle via navegador
+- Comunicação com dispositivos IoT via MQTT
+- Comunicação padrão industrial com sensores e atuadores via Modbus RTU
+- Atualização remota de firmware via OTA
+- Monitoramento e controle de entradas/saídas digitais e analógicas
+
+## 🧠 Público-Alvo
+
+Estudantes e professores de cursos técnicos em automação e eletrônica que buscam uma alternativa prática, acessível e moderna para aprendizagem de CLPs.
+
+## 👨‍💻 Equipe
+
+- Eduardo Trevisan Fernandes  
+- Guilherme Veiga Pedromilo  
+- Paulo Ricardo Fondello Satelis  
+- Florivaldo Antonio Romera Garcia  
+
+**Orientadores:**  
+- Caio Cesar Alves dos Santos  
+- Rafael Olenk Zani  
+- Rogério Aparecido Silva  
+
+## 🗂️ Estrutura de Documentação
+
+O repositório inclui os seguintes diretórios com informações adicionais:
+
+- [`public/docs`](./public/docs) – Documentação técnica, esquemas e relatórios do projeto.
+- [`public/media`](./public/media) – Imagens e mídias relacionadas ao desenvolvimento do projeto, incluindo a construção da PCI, interface web, entre outros.
+
+## 📎 Link do Projeto
+
+🔗 [Repositório GitHub](https://github.com/GuilhermeVeigaPedromilo/CLP_SENAI.git)
+
+---
+
+> Projeto desenvolvido em 2025 – Americana/SP – Curso Técnico em Eletroeletrônica – SENAI

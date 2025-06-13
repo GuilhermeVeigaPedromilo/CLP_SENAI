@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>ESP32 Atualização</title>
+    <link rel="shortcut icon" href="logo-senai-1.png">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="atualizar.css" />
+</head>
+
+<body>
+    <div id="header-placeholder" data-basepath="../"></div>
+
+    <main>
+        <h1>Atualização do ESP32</h1>
+
+        <section class="update-page-section">
+            <h2>Via Arduino IDE</h2>
+            <p>
+                Para atualizar o firmware via Wi-Fi usando a IDE do Arduino, conecte o ESP32 à mesma rede Wi-Fi do computador.<br>
+                Na Arduino IDE vá em <strong>Ferramentas → Porta → Porta de Rede</strong> e selecione seu dispositivo.
+            </p>
+        </section>
+
+        <section class="update-page-section">
+            <h2>Via Arquivo .bin</h2>
+            <form class="update-page-form" method="POST" action="/update" enctype="multipart/form-data">
+                <input type="file" name="update" required />
+                <input type="submit" value="Atualizar" />
+            </form>
+        </section>
+    </main>
+
+    <footer></footer>
+    <script src="consumir_header.js" defer></script>
+</body>
+</html>
