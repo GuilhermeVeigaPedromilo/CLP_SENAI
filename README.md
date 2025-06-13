@@ -1,4 +1,4 @@
-# 🚀 CLP-SENAI – CLP de Baixo Custo
+# 🚀 CLP EDUCACIONAL
 <img class="w-screen flex align-center" src="./public/media/Circuito com Potênciometro - CLP Monitorando dados.png">
 
 ---
