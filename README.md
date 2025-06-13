@@ -1,5 +1,5 @@
 # 🚀 CLP-SENAI – CLP de Baixo Custo
-<img src="./public/media/Circuito com Potênciometro - CLP Monitorando dados.jpeg">
+<img class="w-screen flex align-center" src="./public/media/Circuito com Potênciometro - CLP Monitorando dados.png">
 
 ---
 Projeto desenvolvido como trabalho final do Curso Técnico em Eletroeletrônica da Escola SENAI “Prof. João Baptista Salles da Silva” – Americana/SP.
