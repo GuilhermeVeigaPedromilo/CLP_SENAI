@@ -6,7 +6,7 @@ Projeto desenvolvido como trabalho final do Curso Técnico em Eletroeletrônica 
 
 ## 📘 Resumo
 
-Este projeto propõe o desenvolvimento de um **Controlador Lógico Programável (CLP)** de baixo custo baseado no microcontrolador **ESP32**, com foco educacional para o ensino técnico em automação industrial. O sistema implementa funcionalidades práticas como interface web responsiva, suporte a protocolos industriais (Modbus RTU e MQTT) e atualização remota de firmware (OTA), possibilitando uma experiência realista e interativa.
+Este projeto propõe o desenvolvimento de um **Controlador Lógico Programável (CLP)** de baixo custo baseado no microcontrolador **ESP32**, com foco educacional para o ensino técnico em automação industrial. O sistema implementa funcionalidades práticas como interface web responsiva, suporte a protocolos industriais (MQTT) e atualização remota de firmware (OTA), possibilitando uma experiência realista e interativa.
 
 ## 🎯 Objetivo
 
@@ -16,7 +16,6 @@ Oferecer uma solução acessível, modular e escalável que simule as funções 
 
 - Configurar o ESP32 para operar como um CLP com ciclo de scan.
 - Desenvolver uma interface web responsiva.
-- Implementar comunicação via **MQTT** e suporte ao protocolo **Modbus RTU**.
 - Criar uma **placa de circuito impresso (PCI)** modular.
 - Incluir funcionalidade de atualização OTA do firmware.
 - Validar o desempenho com testes práticos.
@@ -25,7 +24,6 @@ Oferecer uma solução acessível, modular e escalável que simule as funções 
 
 - **ESP32 DevKit V1**
 - **MQTT (Mosquitto)**
-- **Modbus RTU**
 - **Arduino IDE + Bibliotecas:**
   - WiFiManager
   - ESPAsyncWebServer
@@ -39,7 +37,6 @@ Oferecer uma solução acessível, modular e escalável que simule as funções 
 
 - Interface gráfica para controle via navegador
 - Comunicação com dispositivos IoT via MQTT
-- Comunicação padrão industrial com sensores e atuadores via Modbus RTU
 - Atualização remota de firmware via OTA
 - Monitoramento e controle de entradas/saídas digitais e analógicas
 
